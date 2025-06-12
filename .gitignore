@@ -1,4 +1,4 @@
-__pycache__/
-.DS_Store/
+__pycache__
+.DS_Store
 chroma.db/
-test_bk.md
+text_bk.md

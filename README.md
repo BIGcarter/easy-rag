@@ -20,11 +20,13 @@
 
 整个流程仅依赖 ~100 行 Python 代码，方便理解与二次开发。
 
+改编自[B站视频《从零写AI RAG 个人知识库》](https://www.bilibili.com/video/BV168j7zCE6D/?spm_id_from=333.1391.0.0)。
+
 ## 🚀 快速开始
 
 ### 1. 克隆项目
 ```bash
-$ git clone https://github.com/<your-name>/easy-rag.git
+$ git clone https://github.com/BIGcarter/easy-rag.git
 $ cd easy-rag
 ```
 
