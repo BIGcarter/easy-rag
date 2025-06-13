@@ -21,11 +21,13 @@ chat_model = 'qwen-plus-2025-04-28'
 file = './test_novel.md'
 
 INSTRUCTION = 'Given a web search query, retrieve relevant passages that answer the query.'
-# QUERY = '牛顿刚刚穿越的时候，面对侍卫的包围，拿出了什么受到天子召见？'
-QUERY = '牛顿做了什么之后受到天子赏识，从而掌管钦天监？'
+QUERY = '牛顿刚刚穿越的时候，面对侍卫的包围，拿出了什么受到天子召见？'
+# QUERY = '牛顿做了什么之后受到天子赏识，从而掌管钦天监？'
+# QUERY = None
+if not QUERY:
+    QUERY = input("你想知道些什么？：")
 
 query_prompt = f"{INSTRUCTION}\n{QUERY}"
-
 embed = text_embedding(file=file, model_config=embed_model_config)
 if not Path("./chroma.db").exists():
     embed.create_db()

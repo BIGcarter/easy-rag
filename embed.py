@@ -89,7 +89,7 @@ class text_embedding():
             doc_withmetadata = ' > '.join(list(c.metadata.values())) + '\n' + c.page_content 
             embedding = self.embed(doc_withmetadata)
             self.chromadb_collection.upsert(
-                ids = str{id},
+                ids = str(id),
                 document = doc_withmetadata,
                 embeddings = embedding,
                 metadatas = c.metadata

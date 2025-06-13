@@ -28,7 +28,6 @@
   - 按Header分割Section，Section内再按token数进行重叠窗口细分，将文档的metadata一起放入向量库中，实现定点检索。
 - Microsoft doc （TBD）
 - PDF (TBD)
-- 纯txt (TBD)
 
 整个流程仅依赖 ~100 行 Python 代码，方便理解与二次开发。
 
