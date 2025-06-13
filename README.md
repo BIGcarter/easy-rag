@@ -1,6 +1,8 @@
 # 动手实现一个简易版 RAG！
 
-> Retrieval-Augmented Generation from scratch with Python, OpenAI & ChromaDB
+> Retrieval-Augmented Generation from scratch with Python, Qwen3 & ChromaDB
+
+>改编自[B站视频《从零写AI RAG 个人知识库》](https://www.bilibili.com/video/BV168j7zCE6D/?spm_id_from=333.1391.0.0)。
 
 <p align="center">
   <img src="https://img.shields.io/badge/python-3.10+-blue" />
@@ -17,10 +19,20 @@
 1. **向量化 (Embedding)** — 借助 [Qwen3-Embedding](https://github.com/QwenLM/Qwen3-Embedding) 模型将文本转为向量；
 2. **检索 (Retrieval)** — 利用 [ChromaDB](https://github.com/chroma-core/chroma) 持久化并按相似度召回文档块；
 3. **生成 (Generation)** — 把检索结果与用户问题拼接后，交给大模型生成答案。
+4. **Agent辅助搜索（Agentic Search）** — 利用LLM的Function Call能力，指定搜索文档的特定区域，减少检索量（TBD）
+
+在向量化阶段，针对不同的文档格式可使用不同的文档分割方法：
+  
+- Markdown ✅
+  - 按段分割（匹配"\n\n"字符，简单粗暴）
+  - 按Header分割Section，Section内再按token数进行重叠窗口细分，将文档的metadata一起放入向量库中，实现定点检索。
+- Microsoft doc （TBD）
+- PDF (TBD)
+- 纯txt (TBD)
 
 整个流程仅依赖 ~100 行 Python 代码，方便理解与二次开发。
 
-改编自[B站视频《从零写AI RAG 个人知识库》](https://www.bilibili.com/video/BV168j7zCE6D/?spm_id_from=333.1391.0.0)。
+
 
 ## 🚀 快速开始
 
